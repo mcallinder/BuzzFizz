@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>BuzzFizz: BuzzFizz</title>
+<title>BuzzFizz: Fibonacci BuzzFizz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,16 +37,27 @@
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">BuzzFizz </div>  </div>
+<div class="title">Fibonacci BuzzFizz </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In the programming language of your choice, write a program generating the first n Fibonacci numbers F(n), printing ...</p><ul>
+<div class="textblock"><h2>Problem</h2>
+<p>In the programming language of your choice, write a program generating the first n Fibonacci numbers F(n), printing ...</p>
+<ul>
 <li>... "Buzz" when F(n) is divisible by 3.</li>
 <li>... "Fizz" when F(n) is divisible by 5.</li>
 <li>... "BuzzFizz" when F(n) is prime.</li>
 <li>... the value F(n) otherwise.</li>
 </ul>
-<p><a href="https://rawgit.com/mcallinder/BuzzFizz/master/BuzzFizz/doc/html/index.html">https://rawgit.com/mcallinder/BuzzFizz/master/BuzzFizz/doc/html/index.html</a> </p>
+<h2>Overview</h2>
+<p>This program was written in C to solve the problem above. It will prompt the user n and then calculate F(n) iteratively and print out the appropriate messages as it goes. Entering 'q' at the prompt will exit the program.</p>
+<p>A much simpler version of this program can be found at <a href="https://gist.github.com/mookerji/ef85e76e8bbfb6539643">this Gist</a>. This version calculates the Fibonacci number and prints the output in the same function, so it only loops through the Fibonacci numbers once making it more efficient. Also, this version is one file, does not accept user input, has no unit testing, and is documented with basic comments.</p>
+<h2>Building</h2>
+<p>The program can be built using the simple Makefile included in the BuzzFizz directory. Simply navigate to the directory and type <em>make</em>. Typing <em>make clean</em> will remove any generated files.</p>
+<p>Debug information and unit testing can be turned off and on with the DEBUG_MODE and UNIT_TEST preprocessor directives within the makefile. These are on by default.</p>
+<h2>Unit testing</h2>
+<p>Unit testing is made possible by <a href="http://www.throwtheswitch.org/unity/">Unity</a>. The unit testing here is very simple and is called within main if the UNIT_TEST preprocessor directive is on. Test cases can be found in the BuzzFizz/test directory. I would like for future iterations of this program to take advantage of Unity's Ruby scripting to run unit tests during the build.</p>
+<h2>Documentation</h2>
+<p>The documentation was done with <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. For the most part, only header files are commented to adhere to the <a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY principle</a>. The documentation can be viewed at <a href="https://rawgit.com/mcallinder/BuzzFizz/master/BuzzFizz/doc/html/index.html">https://rawgit.com/mcallinder/BuzzFizz/master/BuzzFizz/doc/html/index.html</a>. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
