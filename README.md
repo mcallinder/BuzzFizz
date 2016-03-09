@@ -11,19 +11,21 @@ In the programming language of your choice, write a program generating the first
 
 ## Overview
 
-This program was written in C to solve the problem above. It will prompt the user n and then calculate F(n) iteratively and print out the appropriate messages as it goes. Entering 'q' at the prompt will exit the program. 
+This program was written in C to solve the problem above. It will prompt the user for n and then calculate F(n) iteratively and print out the appropriate messages as it goes. Entering 'q' at the prompt will exit the program.
+
+It should be noted that the functions to determine the nth Fibonacci number and to print the message are seperate. This means that the Fibonacci function is called for every _n_. This is obviously not as efficient as combinging the two (as is done in the simple version mentioned below) as it introduces many more loop iterations. This was a design deicision made considering the return limits on the maximum Fibonacci number as well as a desire to illustrate the Fibonacci function as its own module.
 
 A much simpler version of this program can be found at [this Gist](https://gist.github.com/mcallinder/1ea8faa5f437a089e326). This version calculates the Fibonacci number and prints the output in the same function, so it only loops through the Fibonacci numbers once making it more efficient. Also, this version is one file, does not accept user input, has no unit testing, and is documented with basic comments.
 
 ## Building
 
-The program can be built using the simple Makefile included in the BuzzFizz directory. Simply navigate to the directory and type _make_. Typing _make clean_ will remove any generated files.
+The program can be built using the simple Makefile included in the BuzzFizz directory. Simply navigate to the directory and type `make`. Typing `make clean` will remove any generated files.
 
 Debug information and unit testing can be turned off and on with the DEBUG_MODE and UNIT_TEST preprocessor directives within the makefile. These are on by default.
 
 ## Unit testing
 
-Unit testing is made possible by [Unity](http://www.throwtheswitch.org/unity/). The unit testing here is very simple and is called within main if the UNIT_TEST preprocessor directive is on. Test cases can be found in the BuzzFizz/test directory. I would like for future iterations of this program to take advantage of Unity's Ruby scripting to run unit tests during the build.
+Unit testing is made possible by [Unity](http://www.throwtheswitch.org/unity/). The unit testing here is very simple and is called within the main function if the UNIT_TEST preprocessor directive is on. Test cases can be found in the BuzzFizz/test directory. I would like for future iterations of this program to take advantage of Unity's Ruby scripting to run unit tests during the build.
 
 ## Documentation
 
